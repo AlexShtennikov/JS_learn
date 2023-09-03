@@ -9,14 +9,60 @@
 
 	<script>
 
-	function someFunction(param1, ...param2){
-		console.log(param1, param2);
-	}
+		class Robot {
+			constructor(model, weapon, spec) {
+				this.model = model;
+				this.weapon = weapon;
+				this.spec = spec;
+			}
 
-	someFunction("Hi", "there", "im", "Alex");
+			goToEarth() {
+				console.log(this.model, "to go to the earth");
+			}
+		}
 
-	//Результат будет Hi there
-	//Так как у нас два параметра заявленно в функции, а мы передали 4
+		class Terminator extends Robot {
+			constructor(model, weapon, spec, person) {
+				super(model, weapon, spec);
+				this.person = person;
+			}
+
+			getValues() {
+				return [this.model, this.weapon, this.spec, this.person];
+			}
+		}
+
+		let robot = new Terminator("T-800", "Laser gun", "soldier", "Arnold Shwarz");
+		let values = robot.getValues();
+		values.forEach(element => {
+			console.log(element);
+		});
+
+
+	// robot.goToEarth();
+
+	// class Person{
+	// 	#firstname;
+	// 	#lastname;
+	// 	constructor (firstname, lastname){
+	// 		this.#firstname = firstname;
+	// 		this.#lastname = lastname;
+	// 	}
+
+	// 	get firstname() {
+	// 		return this.#firstname;
+	// 	}
+
+	// 	set firstname(firstName) {
+	// 		this.#firstname = firstName;
+	// 	}
+	// }
+
+	// let p = new Person("Alex", "Shtenn");
+	// console.log(p.firstname);	
+
+
+
 
 	</script>
 </body>
