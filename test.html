@@ -9,34 +9,116 @@
 
 	<script>
 
-		class Robot {
-			constructor(model, weapon, spec) {
-				this.model = model;
-				this.weapon = weapon;
-				this.spec = spec;
+		class Good {
+			#price1;
+			#price2;
+			constructor(price1, price2){
+				this.#price1 = price1;
+				this.#price2 = price2;
 			}
 
-			goToEarth() {
-				console.log(this.model, "to go to the earth");
+			cost(amount1, amount2){
+				console.log(amount1 * this.price1)
+				console.log(amount2 * this.price2)
+			}
+
+			get price1 () {
+				return this.#price1;
+			}
+
+			get price2 () {
+				return this.#price2;
 			}
 		}
 
-		class Terminator extends Robot {
-			constructor(model, weapon, spec, person) {
-				super(model, weapon, spec);
-				this.person = person;
-			}
+		let ex1 = new Good (3, 5);
+		let ex2 = new Good (1, 1);
 
-			getValues() {
-				return [this.model, this.weapon, this.spec, this.person];
-			}
-		}
+		ex1.cost(2, 3);
+		ex2.cost(5, 5);
 
-		let robot = new Terminator("T-800", "Laser gun", "soldier", "Arnold Shwarz");
-		let values = robot.getValues();
-		values.forEach(element => {
-			console.log(element);
-		});
+		// class Employee {
+		// 	constructor(name, lastName, period){
+		// 		this.name = name;
+		// 		this.lastName = lastName;
+		// 		this.period = period;
+		// 	}
+		// }
+
+		// let em1 = new Employee("Alex", "Shtenn", "5");
+		// let em2 = new Employee("Ksu", "Shadow", "7");
+
+		// let arrayOfEm = [em1, em2];
+
+		// Employee.prototype.introduce = function() {
+		// 	console.log(this.name, this.lastName, " work " ,this.period);
+		// }
+
+		// arrayOfEm.forEach(element => {
+		// 	element.introduce();
+		// })
+
+		// class Animal {
+		// 	constructor(name, speed, meal, environment) {
+		// 		this.name = name;
+		// 		this.speed = speed;
+		// 		this.meal = meal;
+		// 		this.environment = environment;
+		// 	}
+
+		// 	eating() {
+		// 		console.log(this.name, " is eating");
+		// 	}
+
+		// 	sleep() {
+		// 		console.log(this.name, "is sleeping");
+		// 	}
+
+		// }
+
+		// let rabbit = new Animal("Rabbit", "40", "carrot", "forest");
+		// rabbit.eating();
+		// let wolf = new Animal("Wolf", "45", "rabbit", "forest");
+		// wolf.sleep();
+
+		// Animal.prototype.color = "grey";
+		// Animal.prototype.wake = function () {
+		// 	console.log(this.name, " is wake up");
+		// }
+
+		// wolf.wake();
+		// console.log(rabbit.color);
+
+
+
+		// class Robot {
+		// 	constructor(model, weapon, spec) {
+		// 		this.model = model;
+		// 		this.weapon = weapon;
+		// 		this.spec = spec;
+		// 	}
+
+		// 	goToEarth() {
+		// 		console.log(this.model, "to go to the earth");
+		// 	}
+		// }
+
+		// class Terminator extends Robot {
+		// 	constructor(model, weapon, spec, person) {
+		// 		super(model, weapon, spec);
+		// 		this.person = person;
+		// 	}
+
+		// 	getValues() {
+		// 		return [this.model, this.weapon, this.spec, this.person];
+		// 	}
+		// }
+
+		// let robot = new Terminator("T-800", "Laser gun", "soldier", "Arnold Shwarz");
+		// let values = robot.getValues();
+		// values.forEach(element => {
+		// 	console.log(element);
+		// });
 
 
 	// robot.goToEarth();
