@@ -9,33 +9,43 @@
 
 	<script>
 
-		class Good {
-			#price1;
-			#price2;
-			constructor(price1, price2){
-				this.#price1 = price1;
-				this.#price2 = price2;
-			}
+		let arr = [1, 2, 3, "Test", "Test2", "Test3"];
 
-			cost(amount1, amount2){
-				console.log(amount1 * this.price1)
-				console.log(amount2 * this.price2)
-			}
-
-			get price1 () {
-				return this.#price1;
-			}
-
-			get price2 () {
-				return this.#price2;
-			}
+		function checkNumber(element, index){
+			return typeof element === "number";
 		}
 
-		let ex1 = new Good (3, 5);
-		let ex2 = new Good (1, 1);
+		let filterArr = arr.filter(checkNumber);
+		//console.log(filterArr);
+		console.log(arr.every(checkNumber));
 
-		ex1.cost(2, 3);
-		ex2.cost(5, 5);
+		// class Good {
+		// 	#price1;
+		// 	#price2;
+		// 	constructor(price1, price2){
+		// 		this.#price1 = price1;
+		// 		this.#price2 = price2;
+		// 	}
+
+		// 	cost(amount1, amount2){
+		// 		console.log(amount1 * this.price1)
+		// 		console.log(amount2 * this.price2)
+		// 	}
+
+		// 	get price1 () {
+		// 		return this.#price1;
+		// 	}
+
+		// 	get price2 () {
+		// 		return this.#price2;
+		// 	}
+		// }
+
+		// let ex1 = new Good (3, 5);
+		// let ex2 = new Good (1, 1);
+
+		// ex1.cost(2, 3);
+		// ex2.cost(5, 5);
 
 		// class Employee {
 		// 	constructor(name, lastName, period){
@@ -142,9 +152,6 @@
 
 	// let p = new Person("Alex", "Shtenn");
 	// console.log(p.firstname);	
-
-
-
 
 	</script>
 </body>
