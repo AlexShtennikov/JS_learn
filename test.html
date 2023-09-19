@@ -9,15 +9,19 @@
 
 	<script>
 
-		let arr = [1, 2, 3, "Test", "Test2", "Test3"];
+		//encodeURI and decodeURI
+		// let uri = "https://www.example.com/submit?name=maaike van putten";
+		// let encoded_uri = encodeURI(uri);
+		// console.log("Encoded:", encoded_uri);
+		// let decode_uri = decodeURI(encoded_uri);
+		// console.log("Decoded:", decode_uri);
 
-		function checkNumber(element, index){
-			return typeof element === "number";
-		}
-
-		let filterArr = arr.filter(checkNumber);
-		//console.log(filterArr);
-		console.log(arr.every(checkNumber));
+		//encodeURIComponent and decodeURIComponent
+		let uri = "https://www.example.com/submit?name=maaike van putten";
+		let encoded_uri = encodeURIComponent(uri);
+		console.log("Encoded:", encoded_uri);
+		let decode_uri = decodeURIComponent(encoded_uri);
+		console.log("Decoded:", decode_uri);
 
 		// class Good {
 		// 	#price1;
