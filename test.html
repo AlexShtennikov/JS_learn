@@ -9,33 +9,49 @@
 
 	<script>
 
-		class Good {
-			#price1;
-			#price2;
-			constructor(price1, price2){
-				this.#price1 = price1;
-				this.#price2 = price2;
-			}
+		//encodeURI and decodeURI
 
-			cost(amount1, amount2){
-				console.log(amount1 * this.price1)
-				console.log(amount2 * this.price2)
-			}
+		// let uri = "https://www.example.com/submit?name=maaike van putten";
+		// let encoded_uri = encodeURI(uri);
+		// console.log("Encoded:", encoded_uri);
+		// let decode_uri = decodeURI(encoded_uri);
+		// console.log("Decoded:", decode_uri);
 
-			get price1 () {
-				return this.#price1;
-			}
+		//encodeURIComponent and decodeURIComponent
+		let uri = "https://www.example.com/submit?name=maaike van putten";
+		let encoded_uri = encodeURIComponent(uri);
+		console.log("Encoded:", encoded_uri);
+		let decode_uri = decodeURIComponent(encoded_uri);
+		console.log("Decoded:", decode_uri);
 
-			get price2 () {
-				return this.#price2;
-			}
-		}
 
-		let ex1 = new Good (3, 5);
-		let ex2 = new Good (1, 1);
+		// class Good {
+		// 	#price1;
+		// 	#price2;
+		// 	constructor(price1, price2){
+		// 		this.#price1 = price1;
+		// 		this.#price2 = price2;
+		// 	}
 
-		ex1.cost(2, 3);
-		ex2.cost(5, 5);
+		// 	cost(amount1, amount2){
+		// 		console.log(amount1 * this.price1)
+		// 		console.log(amount2 * this.price2)
+		// 	}
+
+		// 	get price1 () {
+		// 		return this.#price1;
+		// 	}
+
+		// 	get price2 () {
+		// 		return this.#price2;
+		// 	}
+		// }
+
+		// let ex1 = new Good (3, 5);
+		// let ex2 = new Good (1, 1);
+
+		// ex1.cost(2, 3);
+		// ex2.cost(5, 5);
 
 		// class Employee {
 		// 	constructor(name, lastName, period){
